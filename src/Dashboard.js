@@ -49,25 +49,25 @@ export default class Dashboard extends Component {
         <div
           id="dashboard"
         >
-          <div id="movie" onMouseEnter={() => this.handleInHover(0)} onMouseLeave={() => this.handleOutHover(0)} style={{ backgroundColor: this.state.hoverStateIndex === 0 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 0 ? 'pointer' : ''}}>
-            <span id="title">Title: {this.props.movies[0].Title} {this.createButton(0)}</span>
-            <span id="year">Year: {this.props.movies[0].Year}</span>
-            <img id="title" src={this.props.movies[0].Poster} width="120" height="180"></img>
+          <div className="movie" onMouseEnter={() => this.handleInHover(0)} onMouseLeave={() => this.handleOutHover(0)} style={{ backgroundColor: this.state.hoverStateIndex === 0 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 0 ? 'pointer' : ''}}>
+            <span className="title">Title: {this.props.movies[0].Title} {this.createButton(0)}</span>
+            <span className="year">Year: {this.props.movies[0].Year}</span>
+            <img className="title" src={this.props.movies[0].Poster} width="120" height="180"></img>
           </div>
-          <div id="movie" onMouseEnter={() => this.handleInHover(1)} onMouseLeave={() => this.handleOutHover(1)} style={{ backgroundColor: this.state.hoverStateIndex === 1 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 1 ? 'pointer' : '' }}>
-            <span id="title">Title: {this.props.movies[1].Title} {this.createButton(1)}</span>
-            <span id="year">Year: {this.props.movies[1].Year}</span>
-            <img id="title" src={this.props.movies[1].Poster} width="120" height="180"></img>
+          <div className="movie" onMouseEnter={() => this.handleInHover(1)} onMouseLeave={() => this.handleOutHover(1)} style={{ backgroundColor: this.state.hoverStateIndex === 1 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 1 ? 'pointer' : '' }}>
+            <span className="title">Title: {this.props.movies[1].Title} {this.createButton(1)}</span>
+            <span className="year">Year: {this.props.movies[1].Year}</span>
+            <img className="title" src={this.props.movies[1].Poster} width="120" height="180"></img>
           </div>
-          <div id="movie" onMouseEnter={() => this.handleInHover(2)} onMouseLeave={() => this.handleOutHover(2)} style={{ backgroundColor: this.state.hoverStateIndex === 2 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 2 ? 'pointer' : '' }}>
-            <span id="title">Title: {this.props.movies[2].Title} {this.createButton(2)}</span>
-            <span id="year">Year: {this.props.movies[2].Year}</span>
-            <img id="title" src={this.props.movies[2].Poster} width="120" height="180"></img>
+          <div className="movie" onMouseEnter={() => this.handleInHover(2)} onMouseLeave={() => this.handleOutHover(2)} style={{ backgroundColor: this.state.hoverStateIndex === 2 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 2 ? 'pointer' : '' }}>
+            <span className="title">Title: {this.props.movies[2].Title} {this.createButton(2)}</span>
+            <span className="year">Year: {this.props.movies[2].Year}</span>
+            <img className="title" src={this.props.movies[2].Poster} width="120" height="180"></img>
           </div>
-          <div id="movie" onMouseEnter={() => this.handleInHover(3)} onMouseLeave={() => this.handleOutHover(3)} style={{ backgroundColor: this.state.hoverStateIndex === 3 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 3 ? 'pointer' : '' }}>
-            <span id="title">Title: {this.props.movies[3].Title} {this.createButton(3)}</span>
-            <span id="year">Year: {this.props.movies[3].Year}</span>
-            <img id="title" src={this.props.movies[3].Poster} width="120" height="180"></img>
+          <div className="movie" onMouseEnter={() => this.handleInHover(3)} onMouseLeave={() => this.handleOutHover(3)} style={{ backgroundColor: this.state.hoverStateIndex === 3 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 3 ? 'pointer' : '' }}>
+            <span className="title">Title: {this.props.movies[3].Title} {this.createButton(3)}</span>
+            <span className="year">Year: {this.props.movies[3].Year}</span>
+            <img className="title" src={this.props.movies[3].Poster} width="120" height="180"></img>
           </div>
         </div>
       </div>

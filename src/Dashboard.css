@@ -24,13 +24,13 @@
     width: 200px;
   }
 
-  #title {
+  .title {
     font-size: 12 pt;
     font-weight: bold;
   }
 }
 
-#movie {
+.movie {
   width: 20% !important;
   padding: 10px;
   margin-right: .5rem;
