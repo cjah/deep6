@@ -49,6 +49,7 @@ export default class Dashboard extends Component {
   }
 
   render() {
+    console.log('this.props.movies', this.props.movies);
     return (
       <div id="dashboardRoot">
         <Navbar id="navbar" bg="dark" variant="dark">
@@ -63,26 +64,17 @@ export default class Dashboard extends Component {
         <div
           id="dashboard"
         >
-          <Movie onMouseEnter={() => this.handleInHover(0)} onMouseLeave={() => this.handleOutHover(0)} hoverStateIndex={this.state.hoverStateIndex} index={0}>
-            <span className="title">{this.props.movies[0].Title + ' (' + this.props.movies[0].Year + ')'}</span>
-            <img className="" src={this.props.movies[0].Poster} width="120" height="180"></img>
-            {this.createButton(0)}
-          </Movie>
-          <Movie onMouseEnter={() => this.handleInHover(1)} onMouseLeave={() => this.handleOutHover(1)} hoverStateIndex={this.state.hoverStateIndex} index={1}>
-            <span className="title">{this.props.movies[1].Title + ' (' + this.props.movies[1].Year + ')'}</span>
-            <img className="" src={this.props.movies[1].Poster} width="120" height="180"></img>
-            {this.createButton(1)}
-          </Movie>
-          <Movie onMouseEnter={() => this.handleInHover(2)} onMouseLeave={() => this.handleOutHover(2)} hoverStateIndex={this.state.hoverStateIndex} index={2}>
-            <span className="title">{this.props.movies[2].Title + ' (' + this.props.movies[2].Year + ')'}</span>
-            <img className="" src={this.props.movies[2].Poster} width="120" height="180"></img>
-            {this.createButton(2)}
-          </Movie>
-          <Movie onMouseEnter={() => this.handleInHover(3)} onMouseLeave={() => this.handleOutHover(3)} hoverStateIndex={this.state.hoverStateIndex} index={3}>
-            <span className="title">{this.props.movies[3].Title + ' (' + this.props.movies[3].Year + ')'}</span>
-            <img className="" src={this.props.movies[3].Poster} width="120" height="180"></img>
-            {this.createButton(3)}
-          </Movie>
+
+          {
+            this.props.movies.map((movie, i) => {
+              return <Movie onMouseEnter={() => this.handleInHover(i)} onMouseLeave={() => this.handleOutHover(i)} hoverStateIndex={this.state.hoverStateIndex} index={i}>
+                <span className="title">{movie.Title + ' (' + movie.Year + ')'}</span>
+                <img className="" src={movie.Poster} width="120" height="180"></img>
+                {this.createButton(i)}
+            </Movie>
+            })
+          }
+
         </div>
       </div>
     )

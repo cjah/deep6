@@ -1,18 +1,20 @@
 @import './reset.css';
 
 span {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: sans-serif;
   font-size: 12pt;
 }
 
 img {
-  width: 100% !important;
+  /* width: 100% !important; */
+  display: block;
+  margin: 0 auto;
 }
 
-div #title {
+/* div #title {
   font-style: inherit;
   font-weight: bold;
-}
+} */
 
 div #dashboard {
   position: absolute;
@@ -23,6 +25,8 @@ div #dashboard {
   color: #fff;
   border-color: #ff4409;
   background-color: #ff5722;
+  display: block;
+  margin: 0 auto;
 }
 
 .navbar {
