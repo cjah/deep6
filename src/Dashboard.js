@@ -1,7 +1,21 @@
 import React, { Fragment, Component } from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
+import styled from 'styled-components';
 import './bootstrap-overrides.css';
 import './Dashboard.css';
+
+const Movie = styled.div`
+  width: 20% !important;
+  padding: 10px;
+  margin-right: .5rem;
+  border-radius: 4px;
+  border-style: solid;
+  border-bottom: 2px !important;
+  border-left: 2px !important;
+  border-right: 2px !important;
+  float: left;
+  ${props => props.index === props.hoverStateIndex ? 'background: white; cursor: pointer;' : 'background: #c9c9c9; cursor: "";'}
+`
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -49,26 +63,26 @@ export default class Dashboard extends Component {
         <div
           id="dashboard"
         >
-          <div className="movie" onMouseEnter={() => this.handleInHover(0)} onMouseLeave={() => this.handleOutHover(0)} style={{ backgroundColor: this.state.hoverStateIndex === 0 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 0 ? 'pointer' : ''}}>
+          <Movie onMouseEnter={() => this.handleInHover(0)} onMouseLeave={() => this.handleOutHover(0)} hoverStateIndex={this.state.hoverStateIndex} index={0}>
             <span className="title">Title: {this.props.movies[0].Title} {this.createButton(0)}</span>
             <span className="year">Year: {this.props.movies[0].Year}</span>
             <img className="title" src={this.props.movies[0].Poster} width="120" height="180"></img>
-          </div>
-          <div className="movie" onMouseEnter={() => this.handleInHover(1)} onMouseLeave={() => this.handleOutHover(1)} style={{ backgroundColor: this.state.hoverStateIndex === 1 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 1 ? 'pointer' : '' }}>
+          </Movie>
+          <Movie onMouseEnter={() => this.handleInHover(1)} onMouseLeave={() => this.handleOutHover(1)} hoverStateIndex={this.state.hoverStateIndex} index={1}>
             <span className="title">Title: {this.props.movies[1].Title} {this.createButton(1)}</span>
             <span className="year">Year: {this.props.movies[1].Year}</span>
             <img className="title" src={this.props.movies[1].Poster} width="120" height="180"></img>
-          </div>
-          <div className="movie" onMouseEnter={() => this.handleInHover(2)} onMouseLeave={() => this.handleOutHover(2)} style={{ backgroundColor: this.state.hoverStateIndex === 2 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 2 ? 'pointer' : '' }}>
+          </Movie>
+          <Movie onMouseEnter={() => this.handleInHover(2)} onMouseLeave={() => this.handleOutHover(2)} hoverStateIndex={this.state.hoverStateIndex} index={2}>
             <span className="title">Title: {this.props.movies[2].Title} {this.createButton(2)}</span>
             <span className="year">Year: {this.props.movies[2].Year}</span>
             <img className="title" src={this.props.movies[2].Poster} width="120" height="180"></img>
-          </div>
-          <div className="movie" onMouseEnter={() => this.handleInHover(3)} onMouseLeave={() => this.handleOutHover(3)} style={{ backgroundColor: this.state.hoverStateIndex === 3 ? 'white' : '#c9c9c9', cursor: this.state.hoverStateIndex === 3 ? 'pointer' : '' }}>
+          </Movie>
+          <Movie onMouseEnter={() => this.handleInHover(3)} onMouseLeave={() => this.handleOutHover(3)} hoverStateIndex={this.state.hoverStateIndex} index={3}>
             <span className="title">Title: {this.props.movies[3].Title} {this.createButton(3)}</span>
             <span className="year">Year: {this.props.movies[3].Year}</span>
             <img className="title" src={this.props.movies[3].Poster} width="120" height="180"></img>
-          </div>
+          </Movie>
         </div>
       </div>
     )
