@@ -11,13 +11,8 @@ img {
   margin: 0 auto;
 }
 
-/* div #title {
-  font-style: inherit;
-  font-weight: bold;
-} */
-
 div #dashboard {
-  position: absolute;
+  max-width: none;
 }
 
 .btn-primary {

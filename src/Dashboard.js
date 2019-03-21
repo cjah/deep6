@@ -28,7 +28,7 @@ export default class Dashboard extends Component {
 
   createButton(movieIndex) {
     return (
-      <Button onClick={() => this.handleReturnButton(movieIndex)} style={{ cursor: movieIndex === this.state.hoverStateIndex ? 'pointer' : '' }}>Return</Button>
+      <Button onClick={() => this.handleReturnButton(movieIndex)} style={{ cursor: movieIndex === this.state.hoverStateIndex ? 'pointer' : 'none' }}>Return</Button>
     )
   }
 

@@ -7,7 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import { Button, Welcome } from '@storybook/react/demo';
 import Dashboard from '../src/Dashboard';
 
-import movies from '../data/movies_small.json';
+import movies from '../data/movies_large.json';
 
 import imgFile from '../static/logo-deep6.png';
 
