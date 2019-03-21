@@ -44,7 +44,6 @@ export default class Dashboard extends Component {
           <Nav className="tabs">
             <Nav.Link>Movies</Nav.Link>
             <Nav.Link>TV Shows</Nav.Link>
-            <Nav.Link>Test Link </Nav.Link>
           </Nav>
         </Navbar>
         <div
