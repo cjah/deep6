@@ -3,19 +3,7 @@ import { Navbar, Nav, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import './bootstrap-overrides.css';
 import './Dashboard.css';
-
-const Movie = styled.div`
-  width: 20% !important;
-  padding: 10px;
-  margin-right: .5rem;
-  border-radius: 4px;
-  border-style: solid;
-  border-bottom: 2px !important;
-  border-left: 2px !important;
-  border-right: 2px !important;
-  float: left;
-  ${props => props.index === props.hoverStateIndex ? 'background: white; cursor: pointer;' : 'background: #c9c9c9; cursor: "";'}
-`
+import MovieRental from './MovieRental.js'
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -49,7 +37,7 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    console.log('this.props.movies', this.props.movies);
+
     return (
       <div id="dashboardRoot">
         <Navbar id="navbar" bg="dark" variant="dark">
@@ -67,11 +55,7 @@ export default class Dashboard extends Component {
 
           {
             this.props.movies.map((movie, i) => {
-              return <Movie onMouseEnter={() => this.handleInHover(i)} onMouseLeave={() => this.handleOutHover(i)} hoverStateIndex={this.state.hoverStateIndex} index={i}>
-                <span className="title">{movie.Title + ' (' + movie.Year + ')'}</span>
-                <img className="" src={movie.Poster} width="120" height="180"></img>
-                {this.createButton(i)}
-            </Movie>
+              return <MovieRental handleInHover={this.handleInHover} handleOutHover={this.handleOutHover} hoverStateIndex={this.state.hoverStateIndex} index={i} key={i} title={movie.Title} year={movie.Year} src={movie.Poster} createButton={this.createButton} />
             })
           }
 
