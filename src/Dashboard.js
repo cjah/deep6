@@ -43,7 +43,7 @@ export default class Dashboard extends Component {
           </Navbar.Brand>
           <Nav className="tabs">
             <Nav.Link>Movies</Nav.Link>
-            <Nav.Link>TV Shows</Nav.Link>
+            <Nav.Link>TV Shows</Nav.Link> 
           </Nav>
         </Navbar>
         <div
