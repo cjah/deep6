@@ -1,0 +1,32 @@
+{
+  "name": "frontend-challenge",
+  "version": "1.0.0",
+  "description": "Refactor Assignment",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@storybook/addon-actions": "^5.0.1",
+    "@storybook/addon-links": "^5.0.1",
+    "@storybook/react": "^5.0.1",
+    "babel-loader": "^8.0.5",
+    "react": "^16.8.4",
+    "react-bootstrap": "^1.0.0-beta.5",
+    "react-dom": "^16.8.4",
+    "storybook": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "storybook": "start-storybook",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qurius-inc/frontend-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qurius-inc/frontend-challenge/issues"
+  },
+  "homepage": "https://github.com/qurius-inc/frontend-challenge#readme"
+}

@@ -1,0 +1,33 @@
+@import './reset.css';
+
+span {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12pt;
+}
+
+img {
+  width: 100% !important;
+}
+
+div #title {
+  font-style: inherit;
+  font-weight: bold;
+}
+
+div #dashboard {
+  position: absolute;
+}
+
+.btn-primary {
+  text-transform: uppercase;
+  color: #fff;
+  border-color: #ff4409;
+  background-color: #ff5722;
+}
+
+.navbar {
+  display: flex;
+  min-height: 40px !important;
+  margin-bottom: 0px !important;
+  align-items: center;
+}
