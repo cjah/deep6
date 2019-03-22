@@ -1,28 +1,11 @@
 import React, { Fragment, Component } from 'react';
 import { Navbar, Nav, Button, NavDropdown } from 'react-bootstrap';
-import styled from 'styled-components';
 import Helmet from 'react-helmet';
-
+import moment from 'moment';
+import MovieRental from './MovieRental.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import './bootstrap-overrides.css';
 import './Dashboard.css';
-
-
-
-import MovieRental from './MovieRental.js'
-
-const MovieButton = styled.button`
-  text-transform: uppercase;
-  color: #fff;
-  border-color: #ff4409;
-  background-color: #ff5722;
-  display: block;
-  margin: 0 auto;
-  width: 230px;
-  font-size: none;
-  line-height: normal;
-  font-family: 'Lato', sans-serif;
-`
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -32,8 +15,8 @@ export default class Dashboard extends Component {
     }
     this.handleInHover = this.handleInHover.bind(this);
     this.handleOutHover = this.handleOutHover.bind(this);
-    this.createButton = this.createButton.bind(this);
     this.handleReturnButton = this.handleReturnButton.bind(this);
+    this.handleOverdue = this.handleOverdue.bind(this);
   }
 
   handleInHover(index) {
@@ -45,14 +28,17 @@ export default class Dashboard extends Component {
     else this.setState({ hoverStateIndex: index })
   }
 
-  createButton(movieIndex) {
-    return (
-      <MovieButton onClick={() => this.handleReturnMovieButton(movieIndex)} style={{ cursor: movieIndex === this.state.hoverStateIndex ? 'pointer' : 'none' }}>Return</MovieButton>
-    )
-  }
-
   handleReturnButton(movieIndex) {
     console.log('handleReturnButton, movieIndex: ', movieIndex)
+  }
+
+  handleOverdue(utcString) {
+    const sixDaysAgo = moment.unix(moment().subtract(6, 'days'));
+
+    //the json objects all have empty strings for checkedOut so im just going to return false for this case
+    if (utcString === '') return false;
+    return sixDaysAgo < moment.unix(utcString) ? false : true;
+
   }
 
   render() {
@@ -77,16 +63,12 @@ export default class Dashboard extends Component {
           </Navbar.Collapse>
         </Navbar>
 
-        
-
         <div id="dashboard">
-
           {
             this.props.movies.map((movie, i) => {
-              return <MovieRental handleInHover={this.handleInHover} handleOutHover={this.handleOutHover} hoverStateIndex={this.state.hoverStateIndex} index={i} key={i} title={movie.Title} year={movie.Year} src={movie.Poster} createButton={this.createButton} />
+              return <MovieRental overdue={this.handleOverdue(movie.checkedOut)} handleInHover={this.handleInHover} handleOutHover={this.handleOutHover} hoverStateIndex={this.state.hoverStateIndex} index={i} key={i} title={movie.Title} year={movie.Year} src={movie.Poster} handleReturnButton={this.handleReturnButton} />
             })
           }
-
         </div>
       </div>
     )
