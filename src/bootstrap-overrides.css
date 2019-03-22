@@ -1,10 +1,5 @@
 @import './reset.css';
 
-span {
-  font-family: 'Lato', sans-serif;
-  font-size: 12pt;
-}
-
 img {
   display: block;
   margin: 0 auto;
@@ -12,24 +7,6 @@ img {
 
 div #dashboard {
   max-width: none;
-}
-
-.btn-primary {
-  text-transform: uppercase;
-  color: #fff;
-  border-color: #ff4409;
-  background-color: #ff5722;
-  display: block;
-  margin: 0 auto;
-  width: 230px;
-  line-height: unset;
-}
-
-.navbar {
-  display: flex;
-  min-height: 65px !important;
-  margin-bottom: 0px !important;
-  align-items: center;
 }
 
 #responsive-navbar-nav {

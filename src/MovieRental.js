@@ -46,7 +46,6 @@ const Overdue = styled.div`
         text-align: center;
         color: white;
         font-size: 14px;
-        font-family: 'Lato';
         line-height: 20px;
         vertical-align: middle;` :
         'display: none'
@@ -63,7 +62,6 @@ const MovieButton = styled.button`
     width: 230px;
     font-size: 12px;
     line-height: normal;
-    font-family: 'Lato', sans-serif;
     cursor: ${props => props.index === props.hoverStateIndex ? 'pointer' : 'none'};
 `
 

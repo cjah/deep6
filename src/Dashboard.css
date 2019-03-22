@@ -1,3 +1,7 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 12pt;
+}
 div {
   max-width: 100vw;
 }
@@ -7,20 +11,6 @@ div {
   margin-top: -2px;
   width: 100px !important;
 }
-
-.navbar-brand {
-  display: flex;
-}
-
-/* .sb-show-main {
-  min-width: 500px;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
-  overflow: scroll;
-} */
 
 #dashboardRoot {
   max-width: none;
